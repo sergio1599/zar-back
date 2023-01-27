@@ -3,10 +3,10 @@ import { IProduct } from "../interfaces";
 
 
 const productSchema = new Schema<IProduct>({
-    name: {
+    code: {
         type: String,
         required: true,
-        default: ''
+        unique: true
     },
     description: {
         type: String,

@@ -1,4 +1,5 @@
 export interface IProduct {
+    code: string;
     name: string;
     description: string;
     urlImage: string;

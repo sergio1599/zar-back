@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-
+mongoose.set("strictQuery", false);
 mongoose.connect(`${process.env.MONGO_URL}`)
     .then(() => console.log("Connected to database"))
     .catch(err => console.error(`Could not connect to MongoDB: ${err.message}`));
