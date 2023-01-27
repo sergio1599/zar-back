@@ -13,6 +13,10 @@ const productSchema = new Schema<IProduct>({
         required: true,
         default: ''
     },
+    urlImage: {
+        type: String,
+        required: true,
+    },
     category: {
         type: String,
         enum: ['iron', 'steel'],

@@ -1,5 +1,11 @@
 import express, { Application } from 'express';
 import 'dotenv/config';
+import  './database/connectDatabase'
+
+
+
+
+/* require ('./database/connectDatabase') */
 
 const app: Application = express();
 

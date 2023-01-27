@@ -1,6 +1,7 @@
 export interface IProduct {
     name: string;
     description: string;
+    urlImage: string;
     category: ICategory;
     subcategory: ISubcategory;
 
