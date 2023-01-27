@@ -8,6 +8,11 @@ const productSchema = new Schema<IProduct>({
         required: true,
         unique: true
     },
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
     description: {
         type: String,
         required: true,

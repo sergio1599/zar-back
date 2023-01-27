@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import 'dotenv/config';
-import  './database/connectDatabase'
+import './database/connectDatabase'
 import { product } from './routes';
 
 
