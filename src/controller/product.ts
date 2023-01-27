@@ -22,7 +22,7 @@ export const createProduct = async (req: Request, res: Response) => {
             message: 'Product created successfully'
         });
 
-    } catch (error: any) {
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
@@ -41,7 +41,7 @@ export const getProducts = async (_req: Request, res: Response) => {
         return res.status(200).json({
             products
         })
-    } catch (error: any) {
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
@@ -61,7 +61,7 @@ export const getProduct = async (req: Request, res: Response) => {
             product
         })
 
-    } catch (error: any) {
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
@@ -83,7 +83,7 @@ export const updateProduct = async (req: Request, res: Response) => {
             message: 'Product updated successfully',
             product
         });
-    } catch (error: any) {
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
@@ -103,7 +103,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
             success: true,
             message: 'Product deleted successfully',
         });
-    } catch (error: any) {
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
