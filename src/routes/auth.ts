@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { check, param } from 'express-validator';
+import { check } from 'express-validator';
 
 import { signIn } from '../controller/auth';
 import { validate } from '../middlewares';

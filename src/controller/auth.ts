@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { genSaltSync, hashSync, compareSync } from 'bcrypt';
+import { compareSync } from 'bcrypt';
 import { IUserToken } from '../interfaces';
 import User from '../models/User';
 import { database } from '../database';

@@ -1,6 +1,4 @@
 import { Request, Response } from 'express';
-/* import { generate } from 'generate-password-ts'; */
-/* import { genSaltSync, hashSync } from 'bcrypt'; */
 import { database } from '../database';
 import User from '../models/User';
 

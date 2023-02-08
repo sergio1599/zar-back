@@ -4,5 +4,7 @@ export interface IUser {
     lastName: string;
     email: string;
     password?: string;
-    role: string;
+    role: IUserRole;
 }
+
+export type IUserRole = 'admin' | 'client';
