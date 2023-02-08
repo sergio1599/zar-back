@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { v4 as uuid } from 'uuid';
 import { database } from "../database";
-import Product from '../models/Products';
+import Product from '../models/Product';
 
 
 export const createProduct = async (req: Request, res: Response) => {
