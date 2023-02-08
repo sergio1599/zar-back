@@ -55,10 +55,11 @@ export const getUsers = async (_req: Request, res: Response) => {
 
 export const createUser = async (req: Request, res: Response) => {
     await database.connect();
-    const { name, email, password, role } = req.body;
+    const { name, lastName, email, password, role } = req.body;
     try {
         const user = new User({
             name,
+            lastName,
             email,
             password,
             role

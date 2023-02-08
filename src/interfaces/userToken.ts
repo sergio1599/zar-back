@@ -1,8 +1,8 @@
-export interface IUser {
-    _id: string;
+export interface IUserToken {
+    id: string;
     name: string;
     lastName: string;
     email: string;
-    password?: string;
     role: string;
+    status: boolean;
 }
