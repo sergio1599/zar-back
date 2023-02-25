@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { database } from '../database';
 import User from '../models/User';
+import bcrypt from 'bcrypt';
 
 
 export const getUser = async (req: Request, res: Response) => {
@@ -52,14 +53,17 @@ export const getUsers = async (_req: Request, res: Response) => {
 }
 
 export const createUser = async (req: Request, res: Response) => {
-    await database.connect();
-    const { name, lastName, email, password, role } = req.body;
+
     try {
+        await database.connect();
+        const { name, lastName, email, password, role } = req.body;
+        const hashPassword = await bcrypt.hash(password, 10);
+
         const user = new User({
             name,
             lastName,
             email,
-            password,
+            password: hashPassword,
             role
         });
         await user.save();

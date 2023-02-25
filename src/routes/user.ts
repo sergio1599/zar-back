@@ -9,5 +9,4 @@ router.get('/get-user/:email', getUser);
 router.put('/update-user/:email', updateUser);
 router.delete('/delete-user/:email', deleteUser);
 
-
 export { router as user };

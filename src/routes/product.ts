@@ -9,5 +9,4 @@ router.get('/get-product/:code', getProduct);
 router.put('/update-product/:code', updateProduct);
 router.delete('/delete-product/:code', deleteProduct);
 
-
 export { router as product };

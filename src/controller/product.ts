@@ -3,12 +3,11 @@ import { v4 as uuid } from 'uuid';
 import { database } from "../database";
 import Product from '../models/Product';
 
-
 export const createProduct = async (req: Request, res: Response) => {
-    await database.connect();
-    const { name, description, urlImage, category, subCategory } = req.body;
 
     try {
+        await database.connect();
+        const { name, description, urlImage, category, subCategory } = req.body;
         const product = new Product({
             code: uuid(),
             name,
@@ -60,8 +59,8 @@ export const getProducts = async (_req: Request, res: Response) => {
 }
 
 export const getProduct = async (req: Request, res: Response) => {
-    const { code } = req.params;
     try {
+        const { code } = req.params;
         await database.connect();
         const product = await Product.findOne({ code });
         if (!product) {

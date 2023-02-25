@@ -5,8 +5,6 @@ import User from '../models/User';
 import { database } from '../database';
 import { generateJWT } from '../helpers';
 
-
-
 export const signIn = async (req: Request, res: Response) => {
 
     const { email, password } = req.body;
@@ -29,7 +27,7 @@ export const signIn = async (req: Request, res: Response) => {
                 msg: 'The password is incorrect'
             });
         }
-
+        await database.disconnect();
         const userData: IUserToken = {
             id: user._id,
             lastName: user.lastName,
