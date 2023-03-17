@@ -84,6 +84,55 @@ export const getProduct = async (req: Request, res: Response) => {
     }
 }
 
+export const getProductByCategory = async (req: Request, res: Response) => {
+    try {
+        await database.connect();
+        const { category } = req.params;
+        const product = await Product.findOne({ category }).lean();
+        if (!product) {
+            await database.disconnect();
+            return res.status(400).json({
+                success: false,
+                message: 'Product not found'
+            });
+        }
+        return res.status(200).json({
+            product
+        });
+
+    } catch (error) {
+        await database.disconnect();
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+}
+
+export const getProductBySubCategory = async (req: Request, res: Response) => {
+    try {
+        await database.connect();
+        const { subcategory } = req.params;
+        const product = await Product.findOne({ subcategory }).lean();
+        if (!product) {
+            await database.disconnect();
+            return res.status(400).json({
+                success: false,
+                message: 'Product not found'
+            });
+        }
+        return res.status(200).json({
+            product
+        });
+    } catch (error) {
+        await database.disconnect();
+        return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+}
+
 export const updateProduct = async (req: Request, res: Response) => {
     try {
         await database.connect();
