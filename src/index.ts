@@ -2,11 +2,13 @@ import express, { Application } from 'express';
 import 'dotenv/config';
 import './database/connectDatabase'
 import { product, user, auth } from './routes';
+import cors from 'cors';
 
 const app: Application = express();
 
 app.set('port', process.env.PORT || 5000);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
